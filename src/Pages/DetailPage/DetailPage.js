@@ -9,6 +9,7 @@ import TabsDetail from "./TabsDetail";
 
 export default function DetailPage() {
   const [detailFilm, setDetailFilm] = useState(null);
+  const [fallbackTrailer, setFallbackTrailer] = useState("");
   const [show, setShow] = useState(false);
   const detail = useParams();
 
@@ -23,6 +24,7 @@ export default function DetailPage() {
       })
       .catch((err) => {});
   }, [detail.id]);
+
   return (
     <div className="mt-24 w-full h-full">
       <div className={`${styles.bgDetail} h-full w-full`}>
@@ -105,11 +107,13 @@ export default function DetailPage() {
             >
               <iframe
                 className="embed-responsive-item absolute top-0 right-0 bottom-0 left-0 w-full h-full"
-                src={detailFilm?.trailer}
-                allowFullScreen
-                data-gtm-yt-inspected-2340190_699="true"
-                id={240632615}
-              />
+                src={
+                  detailFilm?.trailer.error ||
+                  "https://www.youtube.com/embed/itnqEauWQZM"
+                }
+                frameborder="0"
+                allowfullScreen
+              ></iframe>
             </div>
           </div>
           <div
