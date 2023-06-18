@@ -55,14 +55,7 @@ function App() {
               </LayoutDefault>
             }
           />
-          <Route
-            path="*"
-            element={
-              <LayoutDefault>
-                <NotFoundPage />
-              </LayoutDefault>
-            }
-          />
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </BrowserRouter>
     </div>
