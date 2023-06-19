@@ -8,9 +8,11 @@ const contentStyle = {
   height: "600px",
   width: "100%",
   lineHeight: "600px",
-  backgroundPosition: "top center",
+  backgroundOrigin: "center",
+  backgroundPosition: "center center",
   backgroundRepeat: "no-repeat",
   backgroundSize: "cover",
+  backgroundBlendMode: "lighten",
 };
 
 export default function Banner() {
@@ -33,6 +35,13 @@ export default function Banner() {
   const handleRenderBanner = () => {
     return getListBanner?.map((item, index) => {
       return (
+        // <div key={index}>
+        //   <img
+        //     className="w-full h-[650px] object-contain block"
+        //     src={item.hinhAnh}
+        //     alt=""
+        //   />
+        // </div>
         <div key={index}>
           <div
             style={{ ...contentStyle, backgroundImage: `url(${item.hinhAnh})` }}
