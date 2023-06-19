@@ -35,13 +35,6 @@ export default function Banner() {
   const handleRenderBanner = () => {
     return getListBanner?.map((item, index) => {
       return (
-        // <div key={index}>
-        //   <img
-        //     className="w-full h-[650px] object-contain block"
-        //     src={item.hinhAnh}
-        //     alt=""
-        //   />
-        // </div>
         <div key={index}>
           <div
             style={{ ...contentStyle, backgroundImage: `url(${item.hinhAnh})` }}
